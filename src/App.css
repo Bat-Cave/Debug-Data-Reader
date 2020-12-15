@@ -1,38 +1,105 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+div{
+  display: flex;
+}
+
+.App{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: dimgray;
+  position: relative;
+  overflow: hidden
+}
+
+.container{
+  width: 80%;
+  height: 100%;
+  background: oldlace;
+  padding: 32px;
+}
+
+.left-panel{
+  width: 200px;
+  height: 100%;
+  padding: 8px;
+  border: 1px solid black;
+}
+
+.file-input-area{
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-area{
+  width: calc(100% - 200px);
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+label{
+  width: 100%;
+  height: 40px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.loading{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.5);backdrop-filter: blur(2px);
 }
 
-.App-link {
-  color: #61dafb;
+.true{
+  display: flex;
+  animation: fade-in .25s ease-in
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.false{
+  display: none;
+  animation: fade-out .25s ease-out
+}
+
+input[type="file"]{
+  display: none;
+}
+.custom-file-upload {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+
+
+
+
+
+@keyframes fade-in {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+@keyframes fade-out {
+  0%{opacity: 1;}
+  100%{opacity: 0;}
 }
